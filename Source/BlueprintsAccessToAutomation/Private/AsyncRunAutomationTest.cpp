@@ -5,6 +5,8 @@
 #if WITH_DEV_AUTOMATION_TESTS
 #include "Misc/AutomationTest.h"
 #include "IAutomationControllerModule.h"
+
+#include "Engine.h"
 #endif // WITH_DEV_AUTOMATION_TESTS
 
 DEFINE_LOG_CATEGORY_STATIC(LogAsyncRunAutomationTest, NoLogging, All);
