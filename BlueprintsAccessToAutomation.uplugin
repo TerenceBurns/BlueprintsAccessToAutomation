@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Blueprints Access To Automation",
+	"Description": "Exposing common Automation functionality through to Blueprints. Icon for Blueprints Access To Automation by Becris. Sourced from flaticon.com",
+	"Category": "Other",
+	"CreatedBy": "Trifolium Digital Limited",
+	"CreatedByURL": "http://www.trifoliumdigital.co.uk",
+	"DocsURL": "",
+	"EngineVersion": "4.26.0",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "BlueprintsAccessToAutomation",
+			"Type": "Runtime",
+			"LoadingPhase": "PostEngineInit",
+			"WhitelistPlatforms": [
+				"Win64"
+			]
+		}
+	]
+}
