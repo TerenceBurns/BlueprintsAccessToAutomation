@@ -39,7 +39,6 @@ public class BlueprintsAccessToAutomation : ModuleRules
 				"Slate",
 				"SlateCore",
 				// ... add private dependencies that you statically link with here ...
-				"AutomationController"
 			}
 			);
 		
@@ -50,5 +49,10 @@ public class BlueprintsAccessToAutomation : ModuleRules
 				// ... add any modules that your module loads dynamically here ...
 			}
 			);
+
+		if (Target.Configuration != UnrealTargetConfiguration.Shipping)
+		{
+			PrivateDependencyModuleNames.Add("AutomationController");
+		}
 	}
 }
