@@ -9,9 +9,8 @@
 #include "Engine.h"
 #endif // WITH_DEV_AUTOMATION_TESTS
 
-DEFINE_LOG_CATEGORY_STATIC(LogAsyncRunAutomationTest, NoLogging, All);
 
-#pragma optimize("", off)
+DEFINE_LOG_CATEGORY_STATIC(LogAsyncRunAutomationTest, NoLogging, All);
 
 
 UAsyncRunAutomationTest* UAsyncRunAutomationTest::AsyncRunAutomationTest(UObject* WorldContextObject, const FString& TestName)
@@ -63,8 +62,8 @@ void GetEnabledReports(TSharedPtr<IAutomationReport> InReport, TArray<TSharedPtr
 
 void UAsyncRunAutomationTest::OnTestComplete() const
 {
-#if WITH_DEV_AUTOMATION_TESTS
 	UE_LOG(LogAsyncRunAutomationTest, Log, TEXT("UAsyncRunAutomationTest::OnTestComplete"));
+#if WITH_DEV_AUTOMATION_TESTS
 	IAutomationControllerModule& AutomationControllerModule = FModuleManager::LoadModuleChecked<IAutomationControllerModule>(TEXT("AutomationController"));
 	IAutomationControllerManagerRef AutomationControllerManager = AutomationControllerModule.GetAutomationController();
 	{
@@ -139,5 +138,3 @@ void UAsyncRunAutomationTest::OnTestComplete() const
 	OnFailure.Broadcast(NullResult);
 #endif // WITH_DEV_AUTOMATION_TESTS
 }
-
-#pragma optimize("", on)
