@@ -15,6 +15,7 @@ DEFINE_LOG_CATEGORY_STATIC(LogAsyncRunAutomationTest, NoLogging, All);
 
 UAsyncRunAutomationTest* UAsyncRunAutomationTest::AsyncRunAutomationTest(UObject* WorldContextObject, const FString& TestName)
 {
+	UE_LOG(LogAsyncRunAutomationTest, Verbose, TEXT("UAsyncRunAutomationTest::AsyncRunAutomationTest"));
 	UAsyncRunAutomationTest* Action = NewObject<UAsyncRunAutomationTest>();
 	Action->ExecutingTestName = TestName;
 	Action->RegisterWithGameInstance(WorldContextObject);
@@ -24,6 +25,7 @@ UAsyncRunAutomationTest* UAsyncRunAutomationTest::AsyncRunAutomationTest(UObject
 
 void UAsyncRunAutomationTest::Activate()
 {
+	UE_LOG(LogAsyncRunAutomationTest, Verbose, TEXT("UAsyncRunAutomationTest::Activate"));
 #if WITH_DEV_AUTOMATION_TESTS
 	IAutomationControllerModule& AutomationControllerModule = FModuleManager::LoadModuleChecked<IAutomationControllerModule>(TEXT("AutomationController"));
 	IAutomationControllerManagerRef AutomationControllerManager = AutomationControllerModule.GetAutomationController();
@@ -62,7 +64,7 @@ void GetEnabledReports(TSharedPtr<IAutomationReport> InReport, TArray<TSharedPtr
 
 void UAsyncRunAutomationTest::OnTestComplete() const
 {
-	UE_LOG(LogAsyncRunAutomationTest, Log, TEXT("UAsyncRunAutomationTest::OnTestComplete"));
+	UE_LOG(LogAsyncRunAutomationTest, Verbose, TEXT("UAsyncRunAutomationTest::OnTestComplete"));
 #if WITH_DEV_AUTOMATION_TESTS
 	IAutomationControllerModule& AutomationControllerModule = FModuleManager::LoadModuleChecked<IAutomationControllerModule>(TEXT("AutomationController"));
 	IAutomationControllerManagerRef AutomationControllerManager = AutomationControllerModule.GetAutomationController();

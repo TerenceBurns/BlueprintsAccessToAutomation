@@ -17,6 +17,7 @@ DEFINE_LOG_CATEGORY_STATIC(LogAsyncFindAllAutomationTests, NoLogging, All);
 
 UAsyncFindAllAutomationTests* UAsyncFindAllAutomationTests::AsyncFindAllAutomationTests(UObject* WorldContextObject)
 {
+	UE_LOG(LogAsyncFindAllAutomationTests, Verbose, TEXT("UAsyncFindAllAutomationTests::AsyncFindAllAutomationTests"));
 	UAsyncFindAllAutomationTests* Action = NewObject<UAsyncFindAllAutomationTests>();
 	Action->RegisterWithGameInstance(WorldContextObject);
 	return Action;
@@ -25,6 +26,7 @@ UAsyncFindAllAutomationTests* UAsyncFindAllAutomationTests::AsyncFindAllAutomati
 
 void UAsyncFindAllAutomationTests::Activate()
 {
+	UE_LOG(LogAsyncFindAllAutomationTests, Verbose, TEXT("UAsyncFindAllAutomationTests::Activate"));
 #if WITH_DEV_AUTOMATION_TESTS
 	IAutomationControllerModule& AutomationControllerModule = FModuleManager::LoadModuleChecked<IAutomationControllerModule>(TEXT("AutomationController"));
 	IAutomationControllerManagerRef AutomationControllerManager = AutomationControllerModule.GetAutomationController();
@@ -38,7 +40,7 @@ void UAsyncFindAllAutomationTests::Activate()
 
 void UAsyncFindAllAutomationTests::OnTestsRefreshed() const
 {
-	UE_LOG(LogAsyncFindAllAutomationTests, Log, TEXT("UAsyncFindAllAutomationTests::OnTestsRefreshed"));
+	UE_LOG(LogAsyncFindAllAutomationTests, Verbose, TEXT("UAsyncFindAllAutomationTests::OnTestsRefreshed"));
 	FAsyncFindAllAutomationTestsResult FindAllAutomationTestsResult;
 	
 #if WITH_DEV_AUTOMATION_TESTS

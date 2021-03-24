@@ -21,7 +21,7 @@ public:
 
 
 /** Delegate used to relay the test completion. */
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAsyncFindAllAutomationTests, const FAsyncFindAllAutomationTestsResult&, AvailableTestsResult);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAsyncFindAllAutomationTests, const FAsyncFindAllAutomationTestsResult&, FindAllTestsResultObject);
 
 
 /** 
