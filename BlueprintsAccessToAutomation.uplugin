@@ -21,7 +21,15 @@
 			"Type": "Runtime",
 			"LoadingPhase": "PostEngineInit",
 			"WhitelistPlatforms": [
-				"Win64"
+				"Android",
+				"IOS",
+				"Mac",
+				"Win32",
+				"Win64",
+				"Linux",
+				"Switch",
+				"PS4",
+				"XboxOne"
 			]
 		}
 	]

@@ -54,7 +54,7 @@ class UAsyncRunAutomationTest : public UBlueprintAsyncActionBase
 public:
 
 	/** Blueprint node specific constructor for our test node. */
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", Category = "Automation", WorldContext = "WorldContextObject"))
+	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", Category = "Automation|Trifolium Digital", WorldContext = "WorldContextObject"))
 	static UAsyncRunAutomationTest* AsyncRunAutomationTest(UObject* WorldContextObject, const FString& TestName);
 	
 	/** Delegate called when the Automation test succeeds. */
