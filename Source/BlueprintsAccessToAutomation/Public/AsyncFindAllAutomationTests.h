@@ -20,12 +20,12 @@ public:
 };
 
 
-/** Delegate used to relay the test completion. */
+/** Delegate used to notify that tests have been found. */
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAsyncFindAllAutomationTests, const FAsyncFindAllAutomationTestsResult&, FindAllTestsResultObject);
 
 
 /** 
- * Async action to run a test that is part of the Automation Framework 
+ * Async action to find available tests that are part of the Automation Framework 
  */
 UCLASS()
 class UAsyncFindAllAutomationTests : public UBlueprintAsyncActionBase
@@ -37,7 +37,7 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", Category = "Automation|Trifolium Digital", WorldContext = "WorldContextObject"))
 	static UAsyncFindAllAutomationTests* AsyncFindAllAutomationTests(UObject* WorldContextObject);
 	
-	/** Delegate called when the Automation test succeeds. */
+	/** Delegate called when the Automation tests are found. */
 	UPROPERTY(BlueprintAssignable)
 	FOnAsyncFindAllAutomationTests OnTestNamesReady;
 
@@ -46,6 +46,6 @@ public:
 
 protected:
 
-	// Callback used to hook into the automation framework to relay test information bacl..
+	// Callback used to hook into the automation framework to relay test information back..
 	void OnTestsRefreshed() const;
 };
